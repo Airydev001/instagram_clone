@@ -1,18 +1,19 @@
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter/material.dart';
-// import 'package:instagram_clone_flutter/screens/add_post_screen.dart';
-// import 'package:instagram_clone_flutter/screens/feed_screen.dart';
-// import 'package:instagram_clone_flutter/screens/profile_screen.dart';
-// import 'package:instagram_clone_flutter/screens/search_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
-// const webScreenSize = 600;
+import 'package:instagram_pa/screens/add_post_screen.dart';
+import 'package:instagram_pa/screens/feed_screen.dart';
+import 'package:instagram_pa/screens/profile_screen.dart';
+import 'package:instagram_pa/screens/search_screen.dart';
 
-// List<Widget> homeScreenItems = [
-//   const FeedScreen(),
-//   const SearchScreen(),
-//   const AddPostScreen(),
-//   const Text('notifications'),
-//   ProfileScreen(
-//     uid: FirebaseAuth.instance.currentUser!.uid,
-//   ),
-// ];
+const webScreenSize = 600;
+
+List<Widget> homeScreenItems = [
+  const FeedScreen(),
+  const SearchScreen(),
+  const AddPostScreen(),
+  const Text('notifications'),
+  ProfileScreen(
+    uid: FirebaseAuth.instance.currentUser!.uid,
+  ),
+];
