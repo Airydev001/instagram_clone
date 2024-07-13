@@ -10,6 +10,8 @@ class CommentCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CircleAvatar(
             backgroundImage: NetworkImage(
@@ -24,19 +26,15 @@ class CommentCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                            text: snap.data()['name'],
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                            )),
-                        TextSpan(
-                          text: ' ${snap.data()['text']}',
+                  Row(
+                    children: [
+                      Text(
+                        snap.data()['name'],
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 4),
@@ -45,14 +43,23 @@ class CommentCard extends StatelessWidget {
                         snap.data()['datePublished'].toDate(),
                       ),
                       style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white),
                     ),
                   )
                 ],
               ),
             ),
+          ),
+          Text(
+            snap.data()['text'],
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(
+            width: 200,
           ),
           Container(
             padding: const EdgeInsets.all(8),
